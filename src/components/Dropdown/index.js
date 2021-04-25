@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "./style.scss";
 import data from "../../data/data.json";
 

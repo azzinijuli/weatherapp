@@ -1,7 +1,11 @@
 import "./style.scss";
 
-function Card() {
-  return <div>Soy una card por día</div>;
+function Card(props) {
+  return (
+    <div>
+      <p>{props.day.main.temp}</p>
+    </div>
+  );
 }
 
 export default Card;

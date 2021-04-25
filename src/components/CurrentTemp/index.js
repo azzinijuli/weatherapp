@@ -1,7 +1,7 @@
 import "./style.scss";
 
 function CurrentTemp() {
-  return <div>Soy la temperatura actual</div>;
+  return <div>Temperatura actual</div>;
 }
 
 export default CurrentTemp;

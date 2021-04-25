@@ -1,10 +1,13 @@
 import "./style.scss";
 import Card from "../Card";
-function Wrapper() {
+
+function Wrapper(props) {
   return (
     <div>
-      Soy un wrapper que contiene cards
-      <Card />
+      {props.forecast.length ??
+        props.forecast.list.map((day, key) => {
+          return <Card day={day} key={key} />;
+        })}
     </div>
   );
 }

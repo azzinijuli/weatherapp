@@ -8,25 +8,45 @@ import Wrapper from "./components/Wrapper";
 
 function App() {
   const [selectedCity, setSelectedCity] = useState("");
+  const [current, setCurrent] = useState([]);
+  const [forecast, setForecast] = useState([]);
 
   useEffect(() => {
-    fetchData();
+    fetchForecast();
+    fetchCurrent();
   }, [selectedCity]);
 
-  async function fetchData() {
+  async function fetchForecast() {
     const apiKey = process.env.REACT_APP_API_KEY;
     if (selectedCity == "") {
       const data = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=Buenos Aires&appid=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/forecast?q=Buenos Aires&appid=${apiKey}&units=metric`
       );
       const dataJson = await data.json();
-      console.log(dataJson);
+      setForecast(dataJson);
     } else {
       const data = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&appid=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/forecast?q=${selectedCity}&appid=${apiKey}&units=metric`
       );
       const dataJson = await data.json();
-      console.log(dataJson);
+      setForecast(dataJson);
+    }
+  }
+
+  async function fetchCurrent() {
+    const apiKey = process.env.REACT_APP_API_KEY;
+    if (selectedCity == "") {
+      const data = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=Buenos Aires&appid=${apiKey}&units=metric`
+      );
+      const dataJson = await data.json();
+      setCurrent(dataJson);
+    } else {
+      const data = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${selectedCity}&appid=${apiKey}&units=metric`
+      );
+      const dataJson = await data.json();
+      setCurrent(dataJson);
     }
   }
 
@@ -40,7 +60,7 @@ function App() {
       <Dropdown handleCallback={handleCallback} />
       <CurrentTemp />
       <CurrentStats />
-      <Wrapper />
+      <Wrapper forecast={forecast} />
     </div>
   );
 }
