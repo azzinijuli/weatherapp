@@ -1,9 +1,11 @@
 import "./style.scss";
 
-function Card() {
+function Card({ day }) {
   return (
     <section>
-      <p>Card de cada día</p>
+      <>
+        <span>{Math.floor(day.main.temp)} °C</span>
+      </>
     </section>
   );
 }

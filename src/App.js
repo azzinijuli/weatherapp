@@ -56,10 +56,10 @@ function App() {
 
   return (
     <div>
-      <PlaceDate />
+      <PlaceDate current={current} />
       <Dropdown handleCallback={handleCallback} />
-      <CurrentTemp />
-      <CurrentStats />
+      <CurrentTemp current={current} />
+      <CurrentStats current={current} />
       <Wrapper forecast={forecast} />
     </div>
   );
