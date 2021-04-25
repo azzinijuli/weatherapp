@@ -1,7 +1,11 @@
 import "./style.scss";
 
 function CurrentTemp() {
-  return <div>Temperatura actual</div>;
+  return (
+    <section>
+      <div>Temperatura actual</div>
+    </section>
+  );
 }
 
 export default CurrentTemp;

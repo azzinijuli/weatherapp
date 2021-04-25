@@ -1,10 +1,10 @@
 import "./style.scss";
 
-function Card(props) {
+function Card() {
   return (
-    <div>
-      <p>{props.day.main.temp}</p>
-    </div>
+    <section>
+      <p>Card de cada día</p>
+    </section>
   );
 }
 

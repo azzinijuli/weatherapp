@@ -2,13 +2,14 @@ import "./style.scss";
 import Card from "../Card";
 
 function Wrapper(props) {
+  const { list } = props.forecast;
   return (
-    <div>
-      {props.forecast.length ??
-        props.forecast.list.map((day, key) => {
-          return <Card day={day} key={key} />;
+    <section>
+      {list != undefined &&
+        list.map((day, key) => {
+          return <p>{day.main.temp}</p>;
         })}
-    </div>
+    </section>
   );
 }
 
