@@ -10,6 +10,7 @@ function App() {
   const [selectedCity, setSelectedCity] = useState("");
   const [current, setCurrent] = useState([]);
   const [forecast, setForecast] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchForecast();
@@ -31,6 +32,7 @@ function App() {
       const dataJson = await data.json();
       setForecast(dataJson);
     }
+    setLoading(!setLoading);
   }
 
   async function fetchCurrent() {
@@ -48,6 +50,7 @@ function App() {
       const dataJson = await data.json();
       setCurrent(dataJson);
     }
+    setLoading(!setLoading);
   }
 
   function handleCallback(city) {
@@ -62,7 +65,7 @@ function App() {
         <CurrentTemp current={current} />
         <CurrentStats current={current} />
       </div>
-      <Wrapper forecast={forecast} />
+      <Wrapper forecast={forecast} loading={loading ?? loading} />
     </div>
   );
 }

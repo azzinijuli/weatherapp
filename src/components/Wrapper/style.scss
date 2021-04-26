@@ -1,3 +1,66 @@
+.loading-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loading-txt {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .dot {
+    position: relative;
+    margin: 10px;
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    border-radius: 20px;
+    &.first {
+      animation: f 2s infinite ease-in-out, s 2s infinite ease-in-out;
+    }
+    &.second {
+      animation: f 2s infinite ease-in-out, t 2s infinite ease-in-out;
+    }
+  }
+}
+
+@keyframes f {
+  0% {
+    background-color: #a59a9d;
+  }
+  25% {
+    background-color: #dbcbd6;
+  }
+  50% {
+    background-color: #9383a3;
+  }
+  75% {
+    background-color: #c0aec2;
+  }
+  100% {
+    background-color: #a59a9d;
+  }
+}
+
+@keyframes s {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+@keyframes t {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+  }
+}
 .forecast-wrapper {
   margin-top: 1rem;
   .forecast-title {
