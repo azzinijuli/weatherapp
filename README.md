@@ -1,6 +1,6 @@
 # WeatherApp Challenge - Desafío técnico de aplicación del clima || Frontend 
 
-##Información general
+## Información general
 
 El proyecto fue creado con create-react-app, cumpliendo así con lo solicitado al inicio de la consigna: desarrollar una app full client-side.
 
