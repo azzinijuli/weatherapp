@@ -6,7 +6,7 @@ function Wrapper(props) {
 
   return (
     <section className="forecast-wrapper">
-      <h3>Next 5 days</h3>
+      <h3 className="forecast-title">Next 5 days</h3>
       {list != undefined &&
         list
           .filter((day) => {

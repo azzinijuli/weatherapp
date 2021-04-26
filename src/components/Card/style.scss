@@ -6,6 +6,11 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-left: 2rem;
+  &:hover {
+    background-color: #2c2c2c9c;
+    transition: 0.2s ease-in-out;
+  }
   .forecast-icon {
     width: 60px;
     height: 60px;

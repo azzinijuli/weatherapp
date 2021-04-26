@@ -1,8 +1,10 @@
 .placedate-container {
   display: flex;
   flex-direction: column;
+  margin-left: 2rem;
   .place {
     font-size: 1.5em;
+    margin-bottom: 0.5rem;
   }
   .date {
     font-weight: 100;
