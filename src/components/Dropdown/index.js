@@ -9,23 +9,27 @@ function Dropdown(props) {
   }
 
   return (
-    <div>
-      <ul>
-        {data.map((city, key) => {
-          return (
-            <li
-              key={key}
-              onClick={(e) => {
-                handleClick(e, city.city);
-              }}
-              key={city.city}
-            >
-              {city.city}
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <section className="city-menu">
+      <div className="wrapper-menu">
+        <h3 className="menu-title">Choose another city...</h3>
+        <ul className="select-menu">
+          {data.map((city, key) => {
+            return (
+              <li
+                key={key}
+                onClick={(e) => {
+                  handleClick(e, city.city);
+                }}
+                key={city.city}
+                className="item-menu"
+              >
+                {city.city}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </section>
   );
 }
 

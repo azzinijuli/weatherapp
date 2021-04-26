@@ -6,11 +6,13 @@ function PlaceDate({ current }) {
   return (
     <section>
       {current.sys != undefined && (
-        <div>
-          <span>
+        <div className="placedate-container">
+          <h1 className="place">
             {current.name}, {current.sys.country}
-          </span>
-          <p>{today[0] + ", " + today[2] + " " + today[1]}</p>
+          </h1>
+          <h2 className="date">
+            {today[0] + ", " + today[2] + " " + today[1]}
+          </h2>
         </div>
       )}
     </section>

@@ -55,11 +55,13 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="hero">
       <PlaceDate current={current} />
       <Dropdown handleCallback={handleCallback} />
-      <CurrentTemp current={current} />
-      <CurrentStats current={current} />
+      <div className="current-wrapper">
+        <CurrentTemp current={current} />
+        <CurrentStats current={current} />
+      </div>
       <Wrapper forecast={forecast} />
     </div>
   );

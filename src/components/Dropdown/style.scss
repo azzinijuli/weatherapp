@@ -1,0 +1,24 @@
+.city-menu {
+  position: relative;
+  .wrapper-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 2rem;
+    .menu-title {
+      font-size: 1.3rem;
+    }
+    .select-menu {
+      .item-menu {
+        font-size: 1rem;
+        margin-top: 0.8rem;
+        text-align: end;
+        &:hover {
+          transform: scale(1.05);
+          transition: 0.2s ease-in;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

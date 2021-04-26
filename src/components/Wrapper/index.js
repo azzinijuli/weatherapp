@@ -3,10 +3,10 @@ import Card from "../Card";
 
 function Wrapper(props) {
   const { list } = props.forecast;
-  console.log(list);
-  console.log(list);
+
   return (
-    <section>
+    <section className="forecast-wrapper">
+      <h3>Next 5 days</h3>
       {list != undefined &&
         list
           .filter((day) => {
@@ -24,15 +24,3 @@ function Wrapper(props) {
 }
 
 export default Wrapper;
-/*
-
-        list.map((day, key) => {
-          return (
-            <>
-              <p key={key}>{day.main.temp}</p>
-              <p>{day.dt_txt}</p>
-            </>
-          );
-        })
-
-        */

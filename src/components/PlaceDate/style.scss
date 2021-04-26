@@ -1,0 +1,11 @@
+.placedate-container {
+  display: flex;
+  flex-direction: column;
+  .place {
+    font-size: 1.5em;
+  }
+  .date {
+    font-weight: 100;
+    font-size: 1.2em;
+  }
+}

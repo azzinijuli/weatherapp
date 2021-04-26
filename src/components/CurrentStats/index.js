@@ -7,20 +7,47 @@ function CurrentStats({ current }) {
         current.wind != undefined &&
         current.clouds.all != undefined &&
         current.wind != undefined && (
-          <div>
-            <span>Mínima</span>
-            <span>{Math.floor(current.main.temp_min)}°C</span>
-            <span>Máxima</span>
-            <span>{Math.floor(current.main.temp_max)}°C</span>
-            <span>Sensación térmica</span>
-            <span>{Math.floor(current.main.feels_like)} °C</span>
-            <span>Nubosidad</span>
-            <span>{current.clouds.all}%</span>
-            <span>Humedad</span>
-            <span>{current.main.humidity}%</span>
-            <span>Viento</span>
-            <span>{Math.floor(current.wind.speed)} km/h</span>
-            <span></span>
+          <div className="allstats-wrapper">
+            <div className="stats-wrapper">
+              <div className="stats">
+                <span className="stats-num">
+                  {Math.floor(current.main.temp_min)}°C
+                </span>
+                <span className="stats-txt">Low</span>
+              </div>
+              <div className="stats">
+                <span className="stats-num">
+                  {Math.floor(current.main.temp_max)}°C
+                </span>
+                <span className="stats-txt">High</span>
+              </div>
+            </div>
+
+            <div className="stats-wrapper">
+              <div className="stats">
+                <span className="stats-num">
+                  {Math.floor(current.main.feels_like)}°C
+                </span>
+                <span className="stats-txt">Feels like</span>
+              </div>
+              <div className="stats">
+                <span className="stats-num">{current.clouds.all}%</span>
+                <span className="stats-txt">Clouds</span>
+              </div>
+            </div>
+
+            <div className="stats-wrapper">
+              <div className="stats">
+                <span className="stats-num">{current.main.humidity}%</span>
+                <span className="stats-txt">Humidity</span>
+              </div>
+              <div className="stats">
+                <span className="stats-num">
+                  {Math.floor(current.wind.speed)} km/h
+                </span>
+                <span className="stats-txt">Wind</span>
+              </div>
+            </div>
           </div>
         )}
     </section>
