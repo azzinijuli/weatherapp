@@ -5,6 +5,7 @@ import Dropdown from "./components/Dropdown";
 import CurrentTemp from "./components/CurrentTemp";
 import CurrentStats from "./components/CurrentStats";
 import Wrapper from "./components/Wrapper";
+import Footer from "./components/Footer";
 
 function App() {
   const [selectedCity, setSelectedCity] = useState("");
@@ -66,6 +67,7 @@ function App() {
         <CurrentStats current={current} />
       </div>
       <Wrapper forecast={forecast} loading={loading ?? loading} />
+      <Footer />
     </div>
   );
 }
