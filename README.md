@@ -12,7 +12,7 @@ Como ya se mencionó anteriormente, en la quinta sección el usuario puede elegi
 
 En conclusión, entonces, hay dos URL para el fetch: una estática para la Ciudad de Buenos Aires y una dinámica para elegir entre diversas ciudades.
 
-Asimismo, hay una función fetch para el estado del tiempo actual y otra para el pronóstico de los próximos cinco días. Ya que el pronóstico devolvía un array de cuarenta objetos (porque retorna el estado del tiempo cada 3 horas), opté por reducirlo mediante una función que filtre aquellos cuya fecha y hora terminaran en "00:00:00". De esta manera obtengo un array de sólo cinco objetos, uno por cada día.
+Asimismo, hay una función fetch para el estado del tiempo actual y otra para el pronóstico de los próximos cinco días. Ya que el pronóstico devolvía un array de cuarenta objetos (porque retorna el estado del tiempo cada 3 horas), opté por reducirlo mediante una función que filtre aquellos cuya fecha y hora terminaran en "15:00:00". De esta manera obtengo un array de sólo cinco objetos, uno por cada día.
 
 Para los estilos uticilé SASS, que me permite hacer el código más legible.
 
