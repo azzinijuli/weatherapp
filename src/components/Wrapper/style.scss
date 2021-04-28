@@ -60,10 +60,15 @@
     transform: scale(0);
   }
 }
+.forecast-title {
+  margin-left: 2rem;
+  font-size: 1.3em;
+}
 .forecast-wrapper {
   margin-top: 1rem;
-  .forecast-title {
-    margin-left: 2rem;
-    font-size: 1.3em;
+  margin-left: 2rem;
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-wrap: wrap;
   }
 }

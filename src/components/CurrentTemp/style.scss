@@ -5,6 +5,10 @@
   .weather-image {
     width: 150px;
     height: 150px;
+    @media screen and (max-width: 480px) {
+      width: 100px;
+      height: 100px;
+    }
   }
   .temperature-wrapper {
     display: flex;
@@ -12,10 +16,16 @@
     align-items: center;
     .temperature-num {
       font-size: 3em;
+      @media screen and (max-width: 480px) {
+        font-size: 2em;
+      }
     }
     .temperature-txt {
       font-size: 1.3em;
       margin: 0.5rem;
+      @media screen and (max-width: 480px) {
+        font-size: 1em;
+      }
     }
   }
 }

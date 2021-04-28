@@ -2,18 +2,33 @@
   display: flex;
   border-left: 1px solid #fafafadc;
   margin-left: 2rem;
+  @media screen and (max-width: 480px) {
+    border-top: 1px solid #fafafadc;
+    border-left: none;
+    margin-right: 2rem;
+  }
   .stats-wrapper {
     display: flex;
     justify-content: space-around;
     margin: 0.5rem;
     flex-direction: column;
+    @media screen and (max-width: 320px) {
+      display: flex;
+      justify-content: center;
+    }
     .stats {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: 1rem;
+      @media screen and (max-width: 320px) {
+        margin: 1rem 0;
+      }
       .stats-num {
         font-size: 1.5em;
+        @media screen and (max-width: 480px) {
+          font-size: 1.2em;
+        }
       }
       .stats-txt {
         margin: 0.5rem;

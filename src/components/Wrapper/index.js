@@ -4,23 +4,22 @@ import Card from "../Card";
 function Wrapper(props) {
   const { list } = props.forecast;
   const { loading } = props;
-  console.log(loading);
 
   return (
     <>
+      <h3 className="forecast-title">Next 5 days</h3>
       {loading ? (
-        <div class="loading-container">
+        <div className="loading-container">
           <span className="loading-txt">Loading</span>
-          <div class="first dot"></div>
-          <div class="second dot"></div>
+          <div className="first dot"></div>
+          <div className="second dot"></div>
         </div>
       ) : (
         <section className="forecast-wrapper">
-          <h3 className="forecast-title">Next 5 days</h3>
           {list != undefined &&
             list
               .filter((day) => {
-                return day.dt_txt.endsWith("00:00:00");
+                return day.dt_txt.endsWith("15:00:00");
               })
               .map((day, key) => {
                 return (

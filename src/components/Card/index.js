@@ -15,11 +15,11 @@ function Card({ day }) {
           <span>{Math.floor(day.main.temp)}°C</span>
           <span className="forecast-stat-txt">Temperature</span>
         </div>
-        <div className="forecast-stat-wrapper">
+        <div className="forecast-stat-wrapper extra">
           <span>{day.main.humidity}%</span>
           <span className="forecast-stat-txt">Humidity</span>
         </div>
-        <div className="forecast-stat-wrapper">
+        <div className="forecast-stat-wrapper extra">
           <span>{Math.floor(day.wind.speed)} km/h</span>
           <span className="forecast-stat-txt">Wind</span>
         </div>
