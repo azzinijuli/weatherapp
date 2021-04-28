@@ -16,7 +16,7 @@ function Wrapper(props) {
         </div>
       ) : (
         <section className="forecast-wrapper">
-          {list != undefined &&
+          {list !== undefined &&
             list
               .filter((day) => {
                 return day.dt_txt.endsWith("15:00:00");

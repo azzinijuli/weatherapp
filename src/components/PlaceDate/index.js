@@ -5,7 +5,7 @@ function PlaceDate({ current }) {
 
   return (
     <section>
-      {current.sys != undefined && (
+      {current.sys !== undefined && (
         <div className="placedate-container">
           <h1 className="place">
             {current.name}, {current.sys.country}

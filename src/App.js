@@ -21,7 +21,7 @@ function App() {
 
   async function fetchForecast() {
     const apiKey = process.env.REACT_APP_API_KEY;
-    if (selectedCity == "") {
+    if (selectedCity === "") {
       const data = await fetch(
         `https://api.openweathermap.org/data/2.5/forecast?q=Buenos Aires&appid=${apiKey}&units=metric`
       );
@@ -39,7 +39,7 @@ function App() {
 
   async function fetchCurrent() {
     const apiKey = process.env.REACT_APP_API_KEY;
-    if (selectedCity == "") {
+    if (selectedCity === "") {
       const data = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=Buenos Aires&appid=${apiKey}&units=metric`
       );

@@ -6,10 +6,6 @@ import { useState } from "react";
 function Dropdown(props) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  function showSettings(e) {
-    e.preventDefault();
-  }
-
   function handleStateChange(state) {
     setMenuOpen(state.isOpen);
   }

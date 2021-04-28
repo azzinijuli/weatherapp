@@ -3,10 +3,10 @@ import "./style.scss";
 function CurrentStats({ current }) {
   return (
     <section>
-      {current.main != undefined &&
-        current.wind != undefined &&
-        current.clouds.all != undefined &&
-        current.wind != undefined && (
+      {current.main !== undefined &&
+        current.wind !== undefined &&
+        current.clouds.all !== undefined &&
+        current.wind !== undefined && (
           <div className="allstats-wrapper">
             <div className="stats-wrapper">
               <div className="stats">

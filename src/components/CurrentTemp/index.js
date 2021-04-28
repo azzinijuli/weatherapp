@@ -3,7 +3,7 @@ import "./style.scss";
 function CurrentTemp({ current }) {
   return (
     <section>
-      {current.weather != undefined && (
+      {current.weather !== undefined && (
         <div className="weather-wrapper">
           <img
             src={`http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`}
