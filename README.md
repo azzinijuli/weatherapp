@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# WeatherApp Challenge - Desafío técnico de aplicación del clima || Frontend 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Información general
 
-## Available Scripts
+El proyecto fue creado con create-react-app, cumpliendo así con lo solicitado al inicio de la consigna: desarrollar una app full client-side.
 
-In the project directory, you can run:
+Al iniciar el proyecto se pueden ver cinco secciones principales: lugar y fecha, temperatura actual, estado del tiempo actual y el pronóstico extendido para los próximos cinco días. La quinta sección, ubicada a la derecha, permite al usuario elegir entre otras cinco ciudades diferentes.
 
-### `npm start`
+Los datos que se cargan en un principio para cada sección corresponden a la Ciudad de Buenos Aires, mediante una función fetch() que solicita la información específicamente para esta ciudad. Todos estos datos son traídos desde la API, incluídos los íconos, que la misma API incluye en la respuesta del JSON en forma de string. Este string es un código alfanumérico y se encuentra concatenado a una URL que nos permite acceder a la imagen correspondiente.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Como ya se mencionó anteriormente, en la quinta sección el usuario puede elegir en un menú de cinco ciudades distintas. Estas ciudades se encuentran en un archivo JSON, el cual es un array de objetos. Dicho JSON es importado en la página principal y le pasa la data mediante props al componente "Dropdown". En un principio la idea era hacer un menú desplegable, pero finalmente opté por una lista, ya que de esta manera me resultaba más sencillo acceder al valor del string. Mediante una función onClick() se lee qué ciudad ha clickeado el usuario y, con un callback, se envía esta información a una URL distinta a la anterior. De esta manera obtenemos una URL dinámica, que fetchea los datos según la ciudad clickeada.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+En conclusión, entonces, hay dos URL para el fetch: una estática para la Ciudad de Buenos Aires y una dinámica para elegir entre diversas ciudades.
 
-### `npm test`
+Asimismo, hay una función fetch para el estado del tiempo actual y otra para el pronóstico de los próximos cinco días. Ya que el pronóstico devolvía un array de cuarenta objetos (porque retorna el estado del tiempo cada 3 horas), opté por reducirlo mediante una función que filtre aquellos cuya fecha y hora terminaran en "15:00:00". De esta manera obtengo un array de sólo cinco objetos, uno por cada día.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para los estilos uticilé SASS, que me permite hacer el código más legible.
 
-### `npm run build`
+Con SASS incluí también una pequeña animación al principio, mientras la página espera los datos del fetch para mostrarlos en la pantalla. Es posible que no llegue a visualizarse ya que tarda microsegundos, pero considero importante que el usuario vea que la página le muestra algo, aunque sea una sencilla animación de carga, mientras llegan los datos.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Detalles importantes 
+Ya que la API solicita una key, por cuestiones de seguridad guardé la misma en un archivo .env, y éste fue incluído en el .gitignore.
+En caso de querer montar el proyecto, es necesario crear un archivo .env que contenga lo siguiente:
+REACT_APP_API_KEY=16ba8c1e1a7a57c8d5553241c75b77af
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Detalles menores 
+El JSON fue pensado en un principio para que cada ciudad sea un objeto que contenga las propiedades "name" y "background". La idea original era que al hacer click en cada ciudad el fondo cambie dinámicamente, devolviendo un background acorde a lo seleccionado. Sin embargo, por cuestiones de tiempo, opté por fijar un fondo estático.
