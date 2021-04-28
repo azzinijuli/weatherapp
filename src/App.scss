@@ -5,6 +5,12 @@
   background-size: cover;
   transition: 0.3s ease-in-out;
   background-image: url("https://i.postimg.cc/zGhy4ZSf/photo-1561583534-09e822ba83ba-ixid-Mnwx-Mj-A3f-DB8-MHxwa-G90by1w-YWdlf-Hx8f-GVuf-DB8f-Hx8-ixlib-rb-1-2.jpg");
+  .hamburger-menu {
+    display: none;
+    @media screen and (max-width: 1024px) {
+      display: block;
+    }
+  }
   .current-wrapper {
     display: flex;
     @media screen and (max-width: 480px) {

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import PlaceDate from "./components/PlaceDate";
 import Dropdown from "./components/Dropdown";
+import HamburgerMenu from "./components/HamburgerMenu";
 import CurrentTemp from "./components/CurrentTemp";
 import CurrentStats from "./components/CurrentStats";
 import Wrapper from "./components/Wrapper";
@@ -62,6 +63,9 @@ function App() {
     <div className="hero">
       <PlaceDate current={current} />
       <Dropdown handleCallback={handleCallback} />
+      <div className="hamburger-menu">
+        <HamburgerMenu handleCallback={handleCallback} />
+      </div>
       <div className="current-wrapper">
         <CurrentTemp current={current} />
         <CurrentStats current={current} />
